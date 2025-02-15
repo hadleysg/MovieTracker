@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Add a New Movie";
+}
+
+@model MovieTracker.Models.Movie
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="MovieForm" method="post">
+    <div style="margin-bottom: 15px;">
+        <label for="Title">Title</label>
+        <input asp-for="Title" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="Director">Director</label>
+        <input asp-for="Director" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="Category">Category</label>
+        <input asp-for="Category" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="Year">Year</label>
+        <input asp-for="Year" type="number" required />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="Rating">Rating</label>
+        <select asp-for="Rating">
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="Edited">Edited</label>
+        <select asp-for="Edited">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="LentTo">Lent To</label>
+        <input asp-for="LentTo" />
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="Notes">Notes (Max 25 characters)</label>
+        <input asp-for="Notes" maxlength="25" />
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+

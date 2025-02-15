@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+        window.onload = function() {
+            alert("@TempData["SuccessMessage"]");
+        };
+    </script>
+}
+
+<div class="text-center">
+    <h1>The Joel Hilton Film Collection</h1>
+    <div></div>
+    <img src="~/img/joelhiltonheadshot.jpg" class="mx-auto d-block" />
+</div>
+
