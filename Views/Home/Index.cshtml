@@ -2,18 +2,11 @@
     ViewData["Title"] = "Home Page";
 }
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <script>
-        window.onload = function() {
-            alert("@TempData["SuccessMessage"]");
-        };
-    </script>
-}
 
-<div class="text-center">
-    <h1>The Joel Hilton Film Collection</h1>
-    <div></div>
-    <img src="~/img/joelhiltonheadshot.jpg" class="mx-auto d-block" />
+<div class="container text-center mt-5">
+    <h1 class="display-4">The Joel Hilton Film Collection</h1>
+    <div class="my-4">
+        <img src="~/img/joelhiltonheadshot.jpg" class="img-fluid rounded-circle" alt="Joel Hilton" />
+    </div>
+    <a asp-controller="Home" asp-action="MovieList" class="btn btn-primary btn-lg">View Movie List</a>
 </div>
-

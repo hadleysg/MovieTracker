@@ -1,22 +1,83 @@
+/* Global Reset and Box-Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px; /* Default for smaller screens */
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px; /* Larger font size for medium and above screens */
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Body Styles */
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px; /* Footer spacing */
+    font-family: 'Oswald', sans-serif; /* Apply Oswald font globally */
+}
+
+/* Make Oswald font apply to all headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; /* Thicker headers */
+}
+
+/* Optional: Customize header sizes */
+h1 {
+    font-size: 3rem; /* Larger h1 */
+}
+
+h2 {
+    font-size: 2.5rem; /* Larger h2 */
+}
+
+/* Remove focus box-shadow for buttons and inputs */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus,
+a:focus { /* Added focus for links as well */
+    box-shadow: none; /* Remove box-shadow when focused */
+    outline: none; /* Remove default outline */
+}
+
+/* Remove underline on hover for links */
+a:hover,
+a:focus {
+    text-decoration: none; /* No underline on hover or focus */
+}
+
+/* Remove focus outline on links (if desired) */
+a:focus {
+    outline: none; /* Remove outline on focus if you don't want it */
+}
+
+/* Ensure responsive button layout */
+button, .btn {
+    padding: 10px 20px; /* Slightly larger padding for ease of clicking */
+}
+
+input, select, textarea {
+    padding: 0.5rem 1rem; /* Consistent padding for form controls */
+    border-radius: 4px; /* Rounded corners for modern look */
+}
+
+/* Ensure consistent styling for links */
+a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline from links */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

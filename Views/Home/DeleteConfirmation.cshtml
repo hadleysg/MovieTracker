@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Delete Confirmation";
+}
+
+@model Movie
+
+<div class="container mt-5">
+    <h2 class="text-center text-danger">Delete Confirmation</h2>
+    <div class="card p-4">
+        <p class="lead">Are you sure you want to delete <strong>@Model.Title</strong>?</p>
+
+        <form asp-action="Delete" method="post" asp-route-id="@Model.MovieId">
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a asp-action="MovieList" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

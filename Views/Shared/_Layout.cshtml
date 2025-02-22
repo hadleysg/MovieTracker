@@ -4,7 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MovieTracker</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Link to the correct Bootstrap version (remove duplicates) -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Importing Google Fonts (Oswald) -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Link to your custom CSS files -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MovieTracker.styles.css" asp-append-version="true" />
 </head>
@@ -33,17 +40,25 @@
             </div>
         </nav>
     </header>
+
+    <!-- Main content section -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    <!-- Footer section -->
     <footer class="border-top footer text-muted">
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- Include JavaScript files -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Link to your site's custom JavaScript -->
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Allow additional scripts if necessary -->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
